@@ -20,10 +20,13 @@ public class MainActivity extends AppCompatActivity {
         //make new CakeController Object
         CakeController cakeObj = new CakeController(viewById);
 
-
+        //Blow Out Candles
         Button button = (Button) findViewById(R.id.blowOut);
         button.setOnClickListener(cakeObj);
 
+        //Are there candles switch
+        Button candlesSwitch = (Button) findViewById(R.id.AreCandles);
+        candlesSwitch.setOnClickListener(cakeObj);
     }
 
     public void goodbye(View button) {
