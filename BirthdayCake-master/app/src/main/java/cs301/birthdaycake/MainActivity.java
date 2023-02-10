@@ -29,7 +29,8 @@ public class MainActivity extends AppCompatActivity {
         CompoundButton candlesSwitch = (CompoundButton) findViewById(R.id.areCandles);
         candlesSwitch.setOnCheckedChangeListener(cakeObj);
 
-
+        //seekbar
+        //https://abhiandroid.com/ui/seekbar
     }
 
     public void goodbye(View button) {
