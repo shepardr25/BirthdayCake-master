@@ -6,6 +6,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.util.Log;
 import android.widget.Button;
+import android.widget.CompoundButton;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -25,8 +26,10 @@ public class MainActivity extends AppCompatActivity {
         button.setOnClickListener(cakeObj);
 
         //Are there candles switch
-        Button candlesSwitch = (Button) findViewById(R.id.AreCandles);
-        candlesSwitch.setOnClickListener(cakeObj);
+        CompoundButton candlesSwitch = (CompoundButton) findViewById(R.id.areCandles);
+        candlesSwitch.setOnCheckedChangeListener(cakeObj);
+
+
     }
 
     public void goodbye(View button) {
