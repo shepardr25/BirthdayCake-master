@@ -7,6 +7,7 @@ import android.view.View;
 import android.util.Log;
 import android.widget.Button;
 import android.widget.CompoundButton;
+import android.widget.SeekBar;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -31,6 +32,9 @@ public class MainActivity extends AppCompatActivity {
 
         //seekbar
         //https://abhiandroid.com/ui/seekbar
+        SeekBar candleSeek = (SeekBar) findViewById(R.id.seekBar2);
+        candleSeek.setOnSeekBarChangeListener(cakeObj);
+
     }
 
     public void goodbye(View button) {
