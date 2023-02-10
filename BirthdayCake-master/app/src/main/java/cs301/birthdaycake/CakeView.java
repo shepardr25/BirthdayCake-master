@@ -35,7 +35,7 @@ public class CakeView extends SurfaceView {
     public static final float innerFlameRadius = 15.0f;
 
 
-    //Question 3 -- Checkpoint 1: Decalre private instance variable
+    //Question 3 -- Checkpoint 1: Declare private instance variable
     private CakeModel cakeModel;
 
     //Question 3 -- Checkpoint 1: Getter Method
