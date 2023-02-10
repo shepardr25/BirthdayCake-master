@@ -35,6 +35,14 @@ public class CakeView extends SurfaceView {
     public static final float innerFlameRadius = 15.0f;
 
 
+    //Question 3 -- Checkpoint 1: Decalre private instance variable
+    private CakeModel cakeModel;
+
+    //Question 3 -- Checkpoint 1: Getter Method
+    public CakeModel getCakeModel(){
+        return this.cakeModel;
+    }
+
 
     /**
      * ctor must be overridden here as per standard Java inheritance practice.  We need it
@@ -61,6 +69,10 @@ public class CakeView extends SurfaceView {
         wickPaint.setStyle(Paint.Style.FILL);
 
         setBackgroundColor(Color.WHITE);  //better than black default
+
+        //Question 3 -- Checkpoint 1: Initialize variable as new object
+        cakeModel = new CakeModel();
+
 
     }
 
