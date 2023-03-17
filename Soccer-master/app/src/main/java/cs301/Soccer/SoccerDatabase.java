@@ -52,7 +52,13 @@ public class SoccerDatabase implements SoccerDB {
      */
     @Override
     public boolean removePlayer(String firstName, String lastName) {
-        return false;
+        if(!(database.containsKey(firstNLast(firstName,lastName)))){
+            return false;
+        } else{
+            database.remove(firstNLast(firstName,lastName));
+            return true;
+        }
+
     }
 
     /**
@@ -78,7 +84,13 @@ public class SoccerDatabase implements SoccerDB {
      */
     @Override
     public boolean bumpGoals(String firstName, String lastName) {
-        return false;
+        if(database.containsKey(firstNLast(firstName, lastName))){
+            SoccerPlayer soccerPlayer = database.get(firstNLast(firstName, lastName));
+            soccerPlayer.bumpGoals();
+            return true;
+        } else {
+            return false;
+        }
     }
 
     /**
@@ -88,7 +100,13 @@ public class SoccerDatabase implements SoccerDB {
      */
     @Override
     public boolean bumpYellowCards(String firstName, String lastName) {
-        return false;
+        if(database.containsKey(firstNLast(firstName, lastName))){
+            SoccerPlayer soccerPlayer = database.get(firstNLast(firstName, lastName));
+            soccerPlayer.bumpYellowCards();
+            return true;
+        } else {
+            return false;
+        }
     }
 
     /**
@@ -98,7 +116,13 @@ public class SoccerDatabase implements SoccerDB {
      */
     @Override
     public boolean bumpRedCards(String firstName, String lastName) {
-        return false;
+        if(database.containsKey(firstNLast(firstName, lastName))){
+            SoccerPlayer soccerPlayer = database.get(firstNLast(firstName, lastName));
+            soccerPlayer.bumpRedCards();
+            return true;
+        } else {
+            return false;
+        }
     }
 
     /**
@@ -109,7 +133,17 @@ public class SoccerDatabase implements SoccerDB {
     @Override
     // report number of players on a given team (or all players, if null)
     public int numPlayers(String teamName) {
-        return -1;
+        int numTeam = 0;
+        if(teamName == null){
+            numTeam = database.size();
+        } else {
+            for(SoccerPlayer player: database.values()){
+                if((player.getTeamName()).equals(teamName)){
+                    numTeam++;
+                }
+            }
+        }
+        return numTeam;
     }
 
     /**
