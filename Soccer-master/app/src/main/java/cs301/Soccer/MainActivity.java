@@ -154,6 +154,9 @@ public class MainActivity extends Activity {
         readButton.setOnClickListener(new ReadButtonListener());
         writeButton.setOnClickListener(new WriteButtonListener());
         populateButton.setOnClickListener(new PopulateButtonListener());
+
+
+
     }
 
     /**

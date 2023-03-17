@@ -14,8 +14,16 @@ import java.util.*;
  */
 public class SoccerDatabase implements SoccerDB {
 
+
+
     // dummied up variable; you will need to change this
-    private Hashtable database;
+    //private Hashtable database;
+    Hashtable<String, SoccerPlayer> database = new Hashtable<>();
+
+
+    public String firstNLast(String firstName, String lastName){
+        return firstName + "##" + lastName;
+    }
 
     /**
      * add a player
@@ -25,7 +33,16 @@ public class SoccerDatabase implements SoccerDB {
     @Override
     public boolean addPlayer(String firstName, String lastName,
                              int uniformNumber, String teamName) {
-        return false;
+;
+        if(database.containsKey(firstNLast(firstName, lastName))){
+            return false;
+        } else{
+            SoccerPlayer newPlayer = new SoccerPlayer(firstName, lastName, uniformNumber,
+                    teamName);
+            database.put(firstNLast(firstName, lastName), newPlayer);
+            return true;
+        }
+
     }
 
     /**
@@ -45,7 +62,13 @@ public class SoccerDatabase implements SoccerDB {
      */
     @Override
     public SoccerPlayer getPlayer(String firstName, String lastName) {
-        return null;
+        if(database.containsKey(firstNLast(firstName, lastName))){
+            return database.get(firstNLast(firstName, lastName));
+        } else{
+            return null;
+        }
+
+
     }
 
     /**
